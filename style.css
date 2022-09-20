@@ -22,7 +22,8 @@ a:hover
 .container
     {
         display:block;
-}
+        width:100%;
+    }
 iframe
     {
         border: none;
