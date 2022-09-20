@@ -6,6 +6,7 @@ a
         background-color: yellowgreen;
         display: block; 
         text-align: center;
+        width:100%;
         
     }
 a:hover
