@@ -38,6 +38,5 @@ iframe
         background-image:url("i.png");
         color: white;
         width:100%;
-        margin:0%;
         object-fit:cover;
     }
