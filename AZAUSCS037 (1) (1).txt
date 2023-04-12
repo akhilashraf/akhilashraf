@@ -1,0 +1,1991 @@
+ANDROID LAB PROGRAMES
+
+Name : MUHAMMED FARSIN A
+RegNo: AZAUSCS020
+
+Program 1 :
+Aim: Hello world program ( Write a program to Toast hello world)
+
+Source Code:
+Activity_main.xml
+
+?xml version="1.0" encoding="utf-8"?>
+<androidx. Constraint layout. widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools=http://schemas.android.com/tools
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<Button
+android:id="@+id/toastButton"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content" android:text="TOAST"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+</android. Constraint layout. widget.ConstraintLay
+
+ActivityMain.java
+
+package com.AZAUSCS020.HelloWorld
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle; import android.view.View;
+
+import android.widget.Button; import android.widget.Toast;
+public class MainActivityextends AppCompatActivity {
+Button ToastButton; @Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+ToastButton = findViewById(R.id.toastButton);
+ToastButton.setOnClickListener(new View.OnClickListener() {@Override
+public void
+onClick(View view) {
+Toast.makeText(MainActivity.this,"Hello World",Toast.LENGTH_SHORT).show();
+}
+});
+}
+}
+
+User Interface:
+
+Output
+
+Program 2
+Aim: Addition of two numbers (Write a program to add numbers)Source Code:
+
+Activity_main.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent" tools:context=".MainActivity">
+<EditText android:id="@+id/num1"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="33dp" android:ems="10"
+android:hint="Enter num1" android:inputType="number"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+<EditText android:id="@+id/num2"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="28dp"
+android:ems="10"
+android:hint="Enter num 2 " android:inputType="number"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.502"
+
+app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/num1" />
+<Button android:id="@+id/add"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="36dp" android:onClick="add numbers"
+android:text="ADD" app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.498"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/num2" />
+<TextView android:id="@+id/result" android:layout_width="wrap_content"
+android:layout_height="wrap_content" android:layout_marginTop="27dp"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.498"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/add" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+ActivityMain.java
+package com.AZAUSCS020.Addtwonumbers; import
+android.appcompat.app.AppCompatActivity; import android.
+os.Bundle; import android.view.View; importandroid.
+widget.EditText; import android. widget.TextView; public class
+MainActivity extends AppCompatActivity {
+EditText num1,num2;
+TextView result; @Override
+protected void onCreate(Bundle saved instance State) {
+super.onCreate(savedInstanceState);
+
+setContentView(R.layout.activity_main); num1 =
+findViewById(R.id.num1); num2 =
+findViewById(R.id.num2);
+result = findViewById(R.id.result);
+}
+public void addNumbers(View v){ double n1,n2,r; n1
+= Double.parseDouble(num1.getText().toString()); n2
+= Double.parseDouble(num2.getText().toString()); r
+= n1+n2; result.setText(String.valueOf(r));
+}
+}
+
+User Interface
+
+o
+
+Output
+
+Program 3
+Aim= Alert box(write a program to display alert box with ok and cancel)Source code
+Activity_Main.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent" tools:context=".MainActivity">
+<Button android:id="@+id/alert"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content" android:onClick="alert
+me" android:text="ALERT
+
+ME!"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+ActivityMain.java package
+com.AZAUSCS020.alert; import
+androidx.appcompat.app.AlertDialog; import
+androidx.appcompat.app.AppCompatActivity; import
+android.content.DialogInterface;
+import android.os.Bundle; import android.view.View;import
+android.widget.Toast; public class MainActivity extends
+AppCompatActivity { @Override protected void onCreate(Bundle
+savedInstanceState) { super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+}
+public void alertme(View v){
+AlertDialog dlg = new AlertDialog.Builder(MainActivity.this)
+.setTitle("Message")
+.setMessage("Alert box is awsome")
+.setPositiveButton("ok", new DialogInterface.OnClickListener() {@Override
+public void onClick(DialogInterface dialogInterface, int i){
+dialogInterface.dismiss();
+Toast.makeText(MainActivity.this, "clicked ok!", Toast.LENGTH_SHORT).show();
+}
+
+})
+.setNegativeButton("cancel", new DialogInterface.OnClickListener() {@Override
+public void onClick(DialogInterface dialogInterface, int i) {
+dialogInterface.dismiss(); Toast.makeText(MainActivity.this,"clicked
+cancel!",Toast.LENGTH_SHORT).show();
+}
+})
+.create(); dlg.show();}
+}
+UserInterface
+
+Out put
+
+Program4
+Ain=Menu program(write a menu program to create menu with three menu item)Source code
+Activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent" tools:context=".MainActivity">
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+Menu.xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<item android:id="@+id/settings"
+android:title="Settings" /> <item
+android:id="@+id/contact"
+android:title="Contact" /> <item
+android:id="@+id/about"
+android:title="About Us" />
+</menu>
+ActivityMain.java
+package com.AZAUSCS020.menu; import
+androidx.annotation.NonNull; import
+androidx.appcompat.app.AlertDialog; import
+androidx.appcompat.app.AppCompatActivity; import
+android.content.DialogInterface; import android.os.Bundle;
+import android.view.Menu; import android.view.MenuInflater;
+import android.view.MenuItem; import android.view.View;
+import android.widget.Toast; public class MainActivity extends
+AppCompatActivity { @Override protected void onCreate(Bundle
+savedInstanceState) { super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+}
+@Override public boolean onCreatePanelMenu(int featureId, @NonNullMenu menu) {
+/ return super.onCreatePanelMenu(featureId, menu);
+MenuInflater inflater = getMenuInflater();
+inflater.inflate(R.menu.menu, menu); return true;
+}
+@Override public boolean onOptionsItemSelected(@NonNullMenuItem
+item) {
+
+// return super.onCreatePanelMenu(featureId, menu);
+MenuInflater inflater = getMenuInflater();
+inflater.inflate(R.menu.menu, menu); return true;
+}
+@Override public boolean onOptionsItemSelected(@NonNullMenuItem
+item) {
+switch (item.getItemId()){ case
+R.id.settings:
+Toast.makeText(MainActivity.this, "Settings", Toast.LENGTH_SHORT).show();return true; case
+R.id.contact:
+Toast.makeText(MainActivity.this, "Thank you for contacting us !",
+Toast.LENGTH_SHORT).show();
+return true; case
+R.id.about:
+Toast.makeText(MainActivity.this, "Made with ❤", Toast.LENGTH_SHORT).show();return true;
+default:
+return super.onOptionsItemSelected(item);
+}
+}
+}
+User Interface :
+
+Out put
+
+Program 5
+Aim=Radio Button(write a program to select gender using Radio button)Source code=
+Activity _main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent" tools:context=".MainActivity">
+<RadioGroup android:id="@+id/radioGroup3"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent">
+<RadioButton android:id="@+id/male"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Male" android:onClick="isChecked"
+tools:layout_editor_absoluteX="134dp"
+tools:layout_editor_absoluteY="320dp" />
+<RadioButton android:id="@+id/female"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Female"
+android:onClick="isChecked"
+tools:layout_editor_absoluteX="151dp"
+tools:layout_editor_absoluteY="405dp" />
+<TextView android:id="@+id/textView4"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="264dp"
+android:layout_marginBottom="35dp" android:text="Chooseyour gender :
+" app:layout_constraintBottom_toTopOf="@+id/radioGroup3"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+<TextView android:id="@+id/result"
+android:layout_width="wrap_conte nt"
+android:layout_height="wrap_content"
+
+android:layout_marginTop="24dp"
+android:layout_marginBottom="274dp"
+app:layout_constraintBottom_toBot
+tomOf="parent"
+app:layout_constraintEnd_toEndOf
+="parent"
+app:layout_constraintHorizontal_bi
+as="0.498"
+app:layout_constraintStart_toStart
+Of="parent"
+app:layout_constraintTop_toBotto
+mOf="@+id/radioGroup3" />
+</RadioGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>
+ActivityMain.java package
+com.AZAUSCS020.radiobutton; import
+androidx.appcompat.app.AppCompatActivity; import
+android.os.Bundle; import android.view.View; import
+android.widget.RadioButton; import android.widget.RadioGroup;
+import android.widget.TextView; public class MainActivity
+extends AppCompatActivity {
+RadioButton radioButton;
+RadioGroup radioGroup;
+TextView result; @Override protected void onCreate(Bundle
+savedInstanceState) { super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main); radioGroup
+
+= findViewById(R.id.radioGroup3); result =
+findViewById(R.id.result);
+}
+public void isChecked(View v){ int radioId =
+radioGroup.getCheckedRadioButtonId(); radioButton
+= findViewById(radioId); switch (radioId){ caseR.id.male:
+result.setText("You selected :" + radioButton.getText()); caseR.id.female:
+result.setText("You selected :" + radioButton.getText());
+}
+}
+}
+User interface=
+
+Out put
+
+Program 6
+Aim=program to spin four itemSource
+code
+Activity_main.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent" tools:context=".MainActivity">
+<Spinner android:id="@+id/spinner"
+android:layout_width="240dp" android:layout_height="56dp"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+String.xml
+<resourse
+<string name=”app_name”>spin</string>
+<string -array name=”fruit”>
+<item>mango</item>
+<item>mango</item>
+<item>mango</item>
+<item>mango</item>
+</string-array>
+</resource>
+
+ActivityMain.java package
+com.AZAUSCS020.spin; import
+androidx.appcompat.app.AppCompatActivity; import
+android.os.Bundle; import android.view.View; import
+android.widget.AdapterView; import android.widget.ArrayAdapter; import
+android.widget.Spinner; import android.widget.Toast; public class
+MainActivity extendsAppCompatActivity implements
+AdapterView.OnItemSelectedListener {
+Spinner spinner; @Override protected void onCreate(Bundle
+savedInstanceState) { super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main); spinner
+=findViewById(R.id.spinner);
+ArrayAdapter<CharSequence> adapter =
+
+ArrayAdapter.createFromResource(this,R.array.fruit, android.R.layout.simple_spinner_item);
+adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+spinner.setAdapter(adapter); spinner.setOnItemSelectedListener(this);
+}
+@Override public void onItemSelected(AdapterView<?> adapterView, View view,int i, long l) {
+String choice = adapterView.getItemAtPosition(i).toString();
+Toast.makeText(this, choice, Toast.LENGTH_SHORT).show();
+}
+@Override public void onNothingSelected(AdapterView<?>
+adapterView) {
+}
+}
+
+User interface:
+
+Out put:
+
+Program 7
+Aim=write a program to check the item listedSource
+code
+Activity_Main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent" tools:context=".MainActivity">
+<TextView android:id="@+id/textView3"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="116dp" android:text="Choose your
+hobby : " app:layout_constraintEnd_toEndOf="parent"
+
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+<CheckBox android:id="@+id/checkBox1"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content" android:layout_marginTop="80dp"
+android:text="Cricket" android:onClick="itemCheck"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.42"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/textView3" />
+<Check box android:id="@+id/checkBox2"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="12dp"
+android:text="Football"
+android:onClick="itemCheck"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0. 42"
+app:layout_constraintStart_toStartOf="pa
+rent" app:layout_constraintTop_toBottomOf="
+@+id/checkBox3" />
+<CheckBox android:id="@+id/checkBox3"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content" android:layout_marginTop="4dp"
+android:text="Volley Ball"android:onClick="itemCheck"
+app:layout_constraintEnd_toEndOf="parent"
+
+app:layout_constraintHorizontal_bias="0.439"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
+<CheckBox android:id="@+id/checkBox4"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content" android:layout_marginTop="8dp"
+android:text="Hockey" android:onClick="itemCheck"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.421"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/checkBox1" />
+<TextView android:id="@+id/result"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.498"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/checkBox2"
+app:layout_constraintVertical_bias="0.145" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+MainActivity.java package
+com.AZAUSCS020.Iteninlist; import
+androidx.appcompat.app.AppCompatActivity; import
+android.os.Bundle; import android.util.Log; import
+android.view.View; import android.widget.CheckBox; import
+android.widget.TextView;
+import java.util.ArrayList; public class MainActivityextends
+AppCompatActivity {
+
+CheckBox ch1,ch2,ch3,ch4;
+TextView result;
+ArrayList<String> arrayList; @Override protected void
+onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main); ch1 =
+findViewById(R.id.checkBox1); ch2 =
+findViewById(R.id.checkBox2); ch3 =
+findViewById(R.id.checkBox3);
+ch4 = findViewById(R.id.checkBox4); result
+= findViewById(R.id.result); arrayList =new
+ArrayList<>();
+}
+public void itemCheck(View view){ boolean checked =
+((CheckBox) view).isChecked(); switch(view.getId()){ case
+R.id.checkBox1:
+if (checked){ arrayList.add(ch1.getText().toString());
+}else{ arrayList.remove(ch1.getText().toString());
+}
+break; case
+R.id.checkBox2:
+if (checked){ arrayList.add(ch2.getText().toString());
+}else{ arrayList.remove(ch2.getText().toString());
+}
+break; case
+R.id.checkBox3:
+if (checked){ arrayList.add(ch3.getText().toString());
+}else{ arrayList.remove(ch3.getText().toString());
+}
+break; case
+R.id.checkBox4:
+
+if (checked){ arrayList.add(ch4.getText().toString());
+}
+else{ arrayList.remove(ch4.getText().toString());
+}
+break;
+}
+StringBuilder stringBuilder = new StringBuilder(); for(Strings : arrayList){
+stringBuilder.append(s).append(", ");
+Log.i("ME",s);
+}
+result.setText("You Selected : " + stringBuilder.toString());
+}
+}
+User interface:
+
+Out put:
+
+Program 8
+Aim=write a program to display images from the local drive of the computer source codeSource code=
+Activiity_main.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx. Constraint layout. widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent" tools:context=".MainActivity">
+
+<ImageView android:id="@+id/imageView"
+android:layout_width="377dp"
+android:layout_height="356dp"
+android:layout_marginTop="72dp"
+app:layout_constraintBottom_toTopOf="@
+
++id/button1"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.602"
+app:layout_constraintStart_toStartOf="par ent"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintVertical_bias="0.503 "
+tools:srcCompat="@tools:sample/avatars"
+/>
+
+<Button android:id="@+id/button2"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginBottom="72dp"
+android:onClick="setImageView" android:text="Image 2"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.501"
+app:layout_constraintStart_toStartOf="parent" />
+
+<Button android:id="@+id/button3"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginBottom="4dp"
+android:onClick="setImageView" android:text="Image3"
+
+app:layout_constraintBottom_toTopOf="@+id/button2"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.498"
+app:layout_constraintStart_toStartOf="parent" />
+<Button android:id="@+id/button1"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginBottom="4dp"
+android:onClick="setImageView" android:text="Image1"
+app:layout_constraintBottom_toTopOf="@+id/button3"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.501"
+app:layout_constraintStart_toStartOf="parent" />
+</android. Constraint layout. widget.ConstraintLayout>
+
+MainActivity.java
+package com. AZAUSCS020.image; import
+android.appcompat.app.AppCompatActivity; import android.
+os.Bundle; import android.view.View; import
+android.widget.Button; import android.widget.ImageView; public
+class MainActivity extends AppCompatActivity {
+ImageView imageView;
+Button Image1, Image2, Image3;
+@Override protected void onCreate(Bundle saved instance state)
+{ super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main); imageView =
+findViewById(R.id.imageView); Image1 =
+findViewById(R.id.button1);
+
+Image2 = findViewById(R.id.button2);Image3
+= findViewById(R.id.button3);
+}
+public void setImageView(View view){switch
+(view.getId()){ case R.id.button1:
+imageView.setBackgroundResource(R.drawable.image); break; case
+R.id.button2:
+imageView.setBackgroundResource(R.drawable.image2);break; case
+R.id.button3:
+imageView.setBackgroundResource(R.drawable.image3);break;
+}
+}
+}
+
+User Interface
+
+output
+
+Program 9
+Aim : Write a Program to Display the items in a listSource
+code :
+
+Activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent" tools:context=".MainActivity">
+
+<ListView android:id="@+id/listView"
+android:layout_width="409dp"
+android:layout_height="729dp"
+tools:layout_editor_absoluteX="1dp"
+tools:layout_editor_absoluteY="1dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+MainActivity.java
+package com.AZAUSCS020.Itemlist; import
+androidx.appcompat.app.AppCompatActivity; import
+android.os.Bundle; import android.widget.ArrayAdapter; import
+android.widget.ListView; public class MainActivity extends
+AppCompatActivity {
+ListView listView;
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+
+setContentView(R.layout.activity_main); listView =
+findViewById(R.id.listView);
+String title[] = {"Google","Faceebook","Netflix","Amazon","Tesla"};
+ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+android.R.layout.simple_list_item_1,android.R.id.text1,title);
+listView.setAdapter(adapter);
+}
+}
+
+UserInterface
+
+output
+
+Program 10
+Aim : Fetch data from an EditText and display it in a TextViewSource Code :
+Activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent" tools:context=".MainActivity">
+
+<EditText android:id="@+id/editText"
+android:layout_width="wrap_content
+
+"
+android:layout_height="wrap_content"
+android:layout_marginTop="244dp"
+android:ems="10"
+android:inputType="textPersonName"
+android:text="Name"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias
+="0.497"
+app:layout_constraintStart_toStartOf
+="parent"
+app:layout_constraintTop_toTopOf="parent"
+/>
+
+<TextView android:id="@+id/result"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.498"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/fetch"
+app:layout_constraintVertical_bias="0.128" />
+
+<Button android:id="@+id/fetch"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="48dp"
+
+android:text="Fetch"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.495"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+i
+d/editText" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+MainActivity.java
+package com.AZAUSCS020.fetch;
+Import
+androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+public class MainActivity extends AppCompatActivity {
+EditText editText;
+TextView textView;
+Button button;
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+button = findViewById(R.id.fetch);
+editText = findViewById(R.id.editText);
+textView = findViewById(R.id.result);
+button.setOnClickListener(new View.OnClickListener() {
+@Override
+
+public void onClick(View view) {
+textView.setText(editText.getText().toString());
+}
+});
+}
+}
+
+userinterface
+
+Output
+
+Program:11
+
+Aim : Write a program to display multiplication table of a given number
+Source code :
+Activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<EditText
+android:id="@+id/editText"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="40dp"
+android:layout_marginTop="72dp"
+android:ems="10"
+android:hint="Enter a Number"
+android:inputType="number"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+<Button
+android:id="@+id/submit"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="submit"
+app:layout_constraintBottom_toTopOf="@+id/result"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.444"
+app:layout_constraintStart_toEndOf="@+id/editText"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintVertical_bias="0.669" />
+<TextView
+android:id="@+id/result"
+android:layout_width="332dp"
+android:layout_height="407dp"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/editText"
+app:layout_constraintVertical_bias="0.164" />
+<TextView
+android:id="@+id/textView7"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Multiplication table"
+app:layout_constraintBottom_toTopOf="@+id/editText"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.136"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintVertical_bias="0.584" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+Actvitymain.java
+package com.azauscs020.multiplication;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+public class MainActivity extends AppCompatActivity {
+EditText editText;
+Button submit;
+TextView result;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+editText = findViewById(R.id.editText);
+submit = findViewById(R.id.submit);
+result = findViewById(R.id.result);
+submit.setOnClickListener(new View.OnClickListener(){
+@Override
+public void onClick(View view) {
+Integer num =
+Integer.parseInt(editText.getText().toString());
+Integer answer;
+StringBuffer r = new StringBuffer();
+for(Integer i=1;i<=10;i++){
+answer = i*num;
+r.append(i+" X "+num+" = "+answer).append("\n");
+}
+result.setText(r.toString());
+}
+});
+}
+}
+User Interface:
+
+Output:
+
+Program 12
+Aim : Write a program to Get IP Address of the device
+Source code :
+Activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<TextView
+android:id="@+id/result"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:textAppearance="@style/TextAppearance.AppCompat.Large"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+MainActivity.java
+package com.azauscs020.Ipaddress;
+import androidx.appcompat.app.AppCompatActivity;
+import android.net.wifi.WifiManager;
+import android.os.Bundle;
+import android.text.format.Formatter;
+import android.widget.TextView;
+public class MainActivity extends AppCompatActivity {
+TextView result;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+result = findViewById(R.id.result);
+WifiManager wf = (WifiManager)
+getApplicationContext().getSystemService(WIFI_SERVICE);
+int ip = wf.getConnectionInfo().getIpAddress();
+result.setText(Formatter.formatIpAddress(ip));
+}
+}
+
+activitymainifest.xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools">
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+<application
+android:allowBackup="true"
+android:dataExtractionRules="@xml/data_extraction_rules"
+android:fullBackupContent="@xml/backup_rules"
+android:icon="@mipmap/ic_launcher"
+android:label="@string/app_name"
+android:supportsRtl="true"
+android:theme="@style/Theme.IPAddress"
+tools:targetApi="31">
+<activity
+android:name=".MainActivity"
+android:exported="true">
+<intent-filter>
+<action android:name="android.intent.action.MAIN" />
+<category android:name="android.intent.category.LAUNCHER"
+/>
+</intent-filter>
+</activity>
+</application>
+</manifest>
+User Interface
+
+Output:
+
+PROGRAM NO:13
+
+Aim : Write a program to Change the Background colour of the Activity
+Source Code
+Activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/Clayout"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<Button
+android:id="@+id/change"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="change me"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+<Button
+android:id="@+id/reset"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="reset"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/change"
+
+app:layout_constraintVertical_bias="0.051" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+MainActivity.java
+package com.azauscs020.Backgroundcolor;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+public class MainActivity extends AppCompatActivity {
+ConstraintLayout layout;
+Button change, reset;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+layout = findViewById(R.id.Clayout);
+change = findViewById(R.id.change);
+reset = findViewById(R.id.reset);
+change.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View view) {
+layout.setBackgroundColor(Color.BLUE);
+}
+});
+reset.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View view) {
+layout.setBackgroundColor(Color.WHITE);
+}
+});
+}}
+USER INTERFACE
+
+OUTPUT
+
+PROGRAM NO:14
+
+Aim : Write a program to Change the Background image
+Source Code
+Activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/Clayout"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<Button
+android:id="@+id/bg1"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="change BG"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintVertical_bias="0.904" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+MainActivity.java
+package com.azauscs020.Backgrounimage;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import java.util.Random;
+public class MainActivity extends AppCompatActivity {
+ConstraintLayout layout;
+Button change;
+int images[];
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+layout = findViewById(R.id.Clayout);
+change = findViewById(R.id.bg1);
+images = new int[] {R.drawable.bg1, R.drawable.bg2,
+R.drawable.bg3,
+R.drawable.bg4, R.drawable.bg5, R.drawable.bg6};
+change.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View view) {
+layout.setBackgroundResource(images[new
+Random().nextInt(images.length)]);
+}
+});
+}
+}
+User Interface:
+
+Output
+
+PROGRAM NO:15
+
+Aim : Write a program to start another activity from your own activity using intent
+Source Code:
+Activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/Clayout"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<Button
+android:id="@+id/next"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Move to activity 2"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/textView9"
+app:layout_constraintVertical_bias="0.123" />
+<TextView
+android:id="@+id/textView9"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="292dp"
+android:text="Activity 1"
+android:textAppearance="@style/TextAppearance.AppCompat.Large"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.498"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+Activity_2.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".Activity2">
+<TextView
+android:id="@+id/textView"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Activity 2"
+android:textAppearance="@style/TextAppearance.AppCompat.Large"
+app:layout_constraintBottom_toTopOf="@+id/next2"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.489"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintVertical_bias="0.782" />
+<Button
+android:id="@+id/next2"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginBottom="256dp"
+android:text="Move to Activity 1"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.495"
+app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+MainActivity.java
+package com.AZAUSCS020.Activity;
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+public class MainActivity extends AppCompatActivity {
+Button activity1;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+activity1 = findViewById(R.id.next);
+activity1.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View view) {
+openAvtivity2();
+}
+});
+}
+public void openAvtivity2(){
+Intent intent = new Intent(this, Activity2.class);
+startActivity(intent);
+}
+}
+Activity2.java
+package com.example.amal;
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+
+import android.widget.Button;
+public class Activity2 extends AppCompatActivity {
+Button activity2;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_2);
+activity2 = findViewById(R.id.next2);
+activity2.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View view) {
+openAvtivity1();
+}
+});
+}
+public void openAvtivity1(){
+Intent intent = new Intent(this, MainActivity.class);
+startActivity(intent);
+}
+}
+User interface:
+
+Output
+
+PROGRAM NO:16
+Aim: Write a program to create grid view.
+
+Source Code
+Mainactivity.iava:
+package com.AZAUSCS020.gridview;
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.res.Resources;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
+import android.widget.Toast;
+public class MainActivity extends AppCompatActivity implements
+AdapterView.OnItemClickListener {
+GridView gv;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+gv= (GridView) findViewById(R.id.gridv);
+Resources r=getResources();
+String[] s=r.getStringArray(R.array.fruits);
+ArrayAdapter ad=new
+ArrayAdapter(this,android.R.layout.simple_list_item_1,s);
+52
+gv.setAdapter(ad);
+gv.setOnItemClickListener(this);
+}
+@Override
+public void onItemClick(AdapterView<?> parent, View view, int
+position,
+long id) {
+String s=parent.getItemAtPosition(position).toString();
+Toast t=Toast.makeText(this,"you selected" +s, Toast.LENGTH_SHORT);
+t.show();
+}
+}
+Activitymain.xml:
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Hello World!"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintLeft_toLeftOf="parent"
+app:layout_constraintRight_toRightOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+<GridView
+android:id="@+id/gridv"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:numColumns="3"
+android:layout_marginStart="1dp"
+android:layout_marginLeft="1dp"
+android:layout_marginTop="1dp"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+String.xml:
+<resources>
+<string name="app_name">gridview</string>
+<string-array name="fruits">
+<item>apple</item>
+<item>orange</item>
+<item>mango</item>
+<item>banana</item>
+<item>grapes</item>
+<item>pineapple</item>
+<item>gauva</item>
+</string-array>
+</resources>
+User interface
+
+Output
+
+PROGRAM NO:17
+
+Aim : Write a program to create spinner using array adapter.
+Source Code
+Mainactivity.iava:
+package com.AZAUSCS020.spinner;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.Toast;
+public class MainActivity extends AppCompatActivity implements
+AdapterView.OnItemSelectedListener
+{
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+Spinner sp = (Spinner) findViewById(R.id.spinner);
+String ary[] = {"lotus", "lilly", "rose", "dalia"};
+ArrayAdapter ad = new ArrayAdapter(this,
+android.R.layout.simple_list_item_1, ary);
+sp.setAdapter(ad);
+sp.setOnItemSelectedListener(this);
+}
+@Override
+public void onItemSelected(AdapterView<?> parent, View view, int
+position,
+long id) {
+String s1=parent.getItemAtPosition(position).toString();
+Toast t= Toast.makeText(this,"you selected" +s1,
+Toast.LENGTH_SHORT);
+t.show();
+}
+
+@Override
+public void onNothingSelected(AdapterView<?> parent)
+{
+Toast t=Toast.makeText(this,"please select
+something",Toast.LENGTH_SHORT);
+t.show();
+}
+}
+Activitymain.xml:
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Hello World!"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintLeft_toLeftOf="parent"
+app:layout_constraintRight_toRightOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+<TextView
+android:id="@+id/textView"
+android:layout_width="82dp"
+android:layout_height="25dp"
+android:layout_marginStart="24dp"
+android:layout_marginLeft="24dp"
+android:layout_marginTop="64dp"
+android:text="select flower"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+<Spinner
+android:id="@+id/spinner"
+android:layout_width="161dp"
+android:layout_height="30dp"
+android:layout_marginStart="148dp"
+android:layout_marginLeft="148dp"
+android:layout_marginTop="60dp"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+/></androidx.constraintlayout.widget.ConstraintLayout>
+User Interface:
+
+Output:
+
+PROGRAM NO:18
+
+Aim : Write a program to create login page.
+Source Code
+Mainactivity.iava:
+package com.AZAUSCS020.login;
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.ContentValues;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+public class MainActivity<db> extends AppCompatActivity {
+EditText e1;
+EditText e2;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+e1=(EditText) findViewById(R.id.editTextTextPersonName);
+e2=(EditText) findViewById(R.id.editTextTextPersonName2);
+}
+public void register(View view){
+String s1=e1.getText().toString();
+String s2= e2.getText().toString();
+Dbhelper db= new Dbhelper(this);
+db.insert(s1,s2);
+}
+public void login(View view) {
+String s1=e1.getText().toString();
+String s2= e2.getText().toString();
+Dbhelper db= new Dbhelper(this);
+if (db.Query(s1,s2)){
+Toast t=Toast.makeText(this,"Login successfull",Toast.LENGTH_SHORT);
+t.show();
+}else{
+Toast t1=Toast.makeText(this,"Login failed",Toast.LENGTH_SHORT);
+t1.show();
+}
+}
+public void clear(View view) {
+e1.setText("");
+e2.setText("");
+}
+}
+Activitymain.xml:
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text=""
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintLeft_toLeftOf="parent"
+app:layout_constraintRight_toRightOf="parent"
+
+app:layout_constraintTop_toTopOf="parent" />
+<EditText
+android:id="@+id/editTextTextPersonName"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="38dp"
+android:layout_marginLeft="38dp"
+android:layout_marginTop="44dp"
+android:ems="10"
+android:inputType="textPersonName"
+android:text=""
+android:hint="Enter username"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+<EditText
+android:id="@+id/editTextTextPersonName2"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="39dp"
+android:layout_marginLeft="39dp"
+android:layout_marginTop="32dp"
+android:ems="10"
+android:inputType="textPersonName"
+android:text=""
+android:hint="Enter password"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+/>
+<Button
+android:id="@+id/button"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="47dp"
+android:layout_marginLeft="47dp"
+android:layout_marginTop="180dp"
+android:onClick="login"
+android:text="LOGIN"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+<Button
+android:id="@+id/button2"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="19dp"
+android:layout_marginLeft="19dp"
+android:layout_marginTop="176dp"
+android:onClick="register"
+android:text="REGISTER"
+app:layout_constraintStart_toEndOf="@+id/button"
+app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+<Button
+android:id="@+id/button3"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="28dp"
+android:layout_marginLeft="28dp"
+android:layout_marginTop="348dp"
+android:onClick="clear"
+android:text="CLEAR"
+app:layout_constraintStart_toEndOf="@+id/button2"
+app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+Dbhelper.java
+package com.example.login;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.os.strictmode.SqliteObjectLeakedViolation;
+import androidx.annotation.Nullable;
+public class Dbhelper extends SQLiteOpenHelper{
+Context con;
+public Dbhelper(@Nullable Context context, @Nullable String name,
+@Nullable SQLiteDatabase.CursorFactory factory, int version) {
+super(context, name, factory, version);
+}
+public Dbhelper(Context c){
+super(c, "student", null, 1);
+con=c;
+}
+@Override
+public void onCreate(SQLiteDatabase db) {
+String s="CREATE TABLE LOGIN('username' TEXT PRIMARY
+KEY,'password' TEXT);";
+db.execSQL(s);
+}
+@Override
+public void onUpgrade(SQLiteDatabase db, int oldVersion, int
+newVersion)
+{
+String s="DROP TABLE LOGIN";
+db.execSQL(s);
+onCreate(db);
+}
+public void insert(String u,String p){
+ContentValues c=new ContentValues();
+c.put("username",u);
+c.put("password",p);
+SQLiteDatabase db=getWritableDatabase();
+db.insert("LOGIN",null,c);
+}
+public boolean Query(String u,String p){
+SQLiteDatabase db=getReadableDatabase();
+Cursor c=db.query("LOGIN",null,"username='"+u+"' AND
+password='"+p+"'",null,null,
+,null);
+c.moveToFirst();
+if(c.getCount()>0){
+return true;
+}else
+return false;
+}
+
+User Interface:
+
+Output:
+
+PROGRAM NO:19
+
+Aim : Write a program to create chronometer.
+Source Code:
+Mainactivity.iava:
+package com.AZAUSCS020.chronometer;
+import androidx.appcompat.app.AppCompatActivity;
+import android.app.Activity;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.widget.Chronometer;
+import android.widget.TextView;
+public class MainActivity extends Activity {
+private int seconds=0;
+private boolean running;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+runtimer();
+}
+public void clickstart(View view)
+{
+running = true;
+}
+public void clickstop(View view)
+{
+running = false;
+}
+public void clickreset(View view)
+{
+running = false;
+seconds = 0;
+}
+private void runtimer()
+{
+final Chronometer timeview = (Chronometer)
+findViewById(R.id.textView);
+final Handler handler = new Handler();
+handler.post(new Runnable() {
+@Override
+public void run() {
+int hours = seconds/3600;
+int mins = (seconds%3600)/60;
+int secs = seconds%60;
+String time = String.format("%d:%02d:%02d",hours,mins,secs);
+timeview.setText(time);
+73
+if(running)
+{
+seconds++;
+}
+handler.postDelayed(this,1000);
+}
+});
+}
+}
+
+Activitymain.xml:
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/black"
+tools:context=".MainActivity">
+<Button
+android:id="@+id/stopbutton"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="50dp"
+android:layout_marginLeft="50dp"
+android:layout_marginTop="32dp"
+android:layout_marginEnd="32dp"
+android:layout_marginRight="32dp"
+android:onClick="clickstop"
+android:text="STOP"
+app:backgroundTint="#009688"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toEndOf="@+id/startbutton"
+app:layout_constraintTop_toBottomOf="@+id/textView" />
+<Chronometer
+android:id="@+id/textView"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:textColor="#122CBD"
+android:textSize="92sp"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.498"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintVertical_bias="0.21" />
+<Button
+android:id="@+id/startbutton"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="72dp"
+android:layout_marginLeft="72dp"
+android:layout_marginTop="32dp"
+android:onClick="clickstart"
+android:text="START"
+app:backgroundTint="#009688"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/textView" />
+<Button
+android:id="@+id/resetbutton"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="32dp"
+android:onClick="clickreset"
+android:text="RESET"
+app:backgroundTint="#4CAF50"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/stopbutton" />
+<TextView
+android:id="@+id/textView2"
+android:layout_width="245dp"
+android:layout_height="48dp"
+android:layout_marginStart="32dp"
+android:layout_marginLeft="32dp"
+android:layout_marginTop="32dp"
+
+android:layout_marginEnd="32dp"
+android:layout_marginRight="32dp"
+android:text="CHRONOMETER"
+android:textColor="@color/teal_700"
+android:textSize="30sp"
+android:textStyle="bold"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+User Interface
+
+Output
+
+PROGRAM NO:20
+
+Aim : Write a program to create date and time dialog.
+Source Code
+Mainactivity.iava:
+package com.AZAUSCS020.datetimepicker;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
+import android.os.Build;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.TextView;
+import android.widget.TimePicker;
+import java.util.Calendar;
+public class MainActivity extends AppCompatActivity {
+Button datebtn,timebtn;
+TextView date ,time;
+int cyear,cmonth,cday;
+int chour,cminute;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+datebtn = (Button) findViewById(R.id.datebutton);
+timebtn = (Button) findViewById(R.id.timebutton);
+date = (TextView) findViewById(R.id.datetext);
+time = (TextView) findViewById(R.id.timetext);
+datebtn.setOnClickListener(new View.OnClickListener() {
+@RequiresApi(api = Build.VERSION_CODES.N)
+@Override
+public void onClick(View v) {
+final Calendar calendar = Calendar.getInstance();
+cyear = calendar.get(Calendar.YEAR);
+cmonth = calendar.get(Calendar.MONTH);
+cday = calendar.get(Calendar.DAY_OF_MONTH);
+DatePickerDialog datePickerDialog = new
+DatePickerDialog(MainActivity.this, new
+DatePickerDialog.OnDateSetListener() {
+@Override
+public void onDateSet(DatePicker view, int year, int month, int
+dayOfMonth) {
+date.setText(dayOfMonth+"/"+(month+1)+"/"+year);
+}
+},cyear,cmonth,cday);
+datePickerDialog.show();
+}
+});
+timebtn.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+final Calendar calendar = Calendar.getInstance();
+chour = calendar.get(Calendar.HOUR_OF_DAY);
+cminute = calendar.get(Calendar.MINUTE);
+TimePickerDialog timePickerDialog = new
+TimePickerDialog(MainActivity.this, new
+TimePickerDialog.OnTimeSetListener() {
+@Override
+public void onTimeSet(TimePicker view, int hourOfDay, int
+minute) {
+time.setText(hourOfDay+":"+minute);
+}
+},chour,cminute,false);
+
+timePickerDialog.show();
+}
+});
+}
+}
+Activitymain.xml:
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<Button
+android:id="@+id/datebutton"
+android:layout_width="215dp"
+android:layout_height="58dp"
+android:layout_marginStart="32dp"
+android:layout_marginLeft="32dp"
+android:layout_marginTop="228dp"
+android:layout_marginEnd="32dp"
+android:layout_marginRight="32dp"
+android:background="@color/teal_200"
+android:text="SELECT DATE"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+<TextView
+android:id="@+id/datetext"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="32dp"
+android:layout_marginLeft="32dp"
+android:layout_marginTop="12dp"
+android:layout_marginEnd="32dp"
+android:layout_marginRight="32dp"
+android:gravity="center"
+android:textColor="@color/teal_700"
+android:textSize="18sp"
+android:textStyle="bold"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.482"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/datebutton" />
+<Button
+android:id="@+id/timebutton"
+android:layout_width="215dp"
+android:layout_height="58dp"
+android:layout_marginStart="32dp"
+android:layout_marginLeft="32dp"
+android:layout_marginTop="336dp"
+android:layout_marginEnd="32dp"
+android:layout_marginRight="32dp"
+android:background="@color/teal_200"
+android:text="SELECT TIME"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+<TextView
+android:id="@+id/timetext"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="32dp"
+android:layout_marginLeft="32dp"
+android:layout_marginTop="16dp"
+
+android:layout_marginEnd="32dp"
+android:layout_marginRight="32dp"
+android:gravity="center"
+android:textColor="@color/teal_700"
+android:textSize="18sp"
+android:textStyle="bold"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/timebutton" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+User Interface
+
+Output
+
+PROGRAM NO:21
+
+Aim : Write a program to create date and time picker.
+Source Code
+Mainactivity.iava:
+package com.AZAUSCS020.chronometer;
+import androidx.appcompat.app.AppCompatActivity;
+import android.app.AlertDialog;
+import android.app.DatePickerDialog;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.TimePicker;
+import android.widget.Toast;
+import java.util.Calendar;
+public class MainActivity extends AppCompatActivity implements
+TimePicker.OnTimeChangedListener{
+private DatePickerDialog datePickerDialog;
+private Button dateButton;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+iniDatePicker();
+dateButton = (Button) findViewById(R.id.datepickerbutton);
+
+TimePicker t = (TimePicker)findViewById(R.id.tp);
+t.setOnTimeChangedListener(this);
+}
+@Override
+public void onTimeChanged(TimePicker view, int hourOfDay, int minute)
+{
+Toast.makeText(this,"Time =
+"+hourOfDay+":"+minute,Toast.LENGTH_SHORT).show();
+}
+private void iniDatePicker() {
+DatePickerDialog.OnDateSetListener dateSetListener = new
+DatePickerDialog.OnDateSetListener() {
+@Override
+public void onDateSet(DatePicker view, int year, int month, int
+dayOfMonth) {
+month = month+1;
+String date =makeDateString(dayOfMonth,month,year);
+dateButton.setText(date);
+dateButton.setText(getTodayDate());
+}
+};
+Calendar cal = Calendar.getInstance();
+int year = cal.get(Calendar.YEAR);
+int month = cal.get(Calendar.MONTH);
+int day = cal.get(Calendar.DAY_OF_MONTH);
+int style = AlertDialog.THEME_HOLO_LIGHT;
+datePickerDialog = new
+DatePickerDialog(this,style,dateSetListener,year,month,day);
+}
+private String getTodayDate() {
+Calendar cal = Calendar.getInstance();
+int year = cal.get(Calendar.YEAR);
+int month = cal.get(Calendar.MONTH);
+month = month + 1;
+int day = cal.get(Calendar.DAY_OF_MONTH);
+return makeDateString(day,month,year);
+}
+private String makeDateString(int dayOfMonth, int month, int year) {
+return getMonthFormat(month) + " " + dayOfMonth + " " + year;
+}
+private String getMonthFormat(int month) {
+if(month == 1)
+return "JAN";
+if(month == 2)
+return "FEB";
+if(month == 3)
+return "MAR";
+if(month == 4)
+return "APR";
+if(month == 5)
+return "MAY";
+if(month == 6)
+return "JUN";
+if(month == 7)
+return "JUL";
+if(month == 8)
+return "AUG";
+if(month == 9)
+return "SEP";
+if(month == 10)
+return "OCT";
+if(month == 11)
+return "NOV";
+if(month == 12)
+return "DEC";
+return "JAN";
+
+}
+public void openDatepicker(View view) {
+datePickerDialog.show();
+}
+}
+Activitymain.xml:
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<TimePicker
+android:id="@+id/tp"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="100dp"
+android:layout_marginEnd="88dp"
+android:layout_marginRight="88dp"
+android:timePickerMode="spinner"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+<TextView
+android:id="@+id/textView"
+android:layout_width="232dp"
+android:layout_height="61dp"
+android:layout_marginTop="116dp"
+android:gravity="center"
+android:text=" SELECT DATE"
+android:textColor="@color/teal_700"
+android:textSize="30sp"
+android:textStyle="bold"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.446"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/tp" />
+<Button
+android:id="@+id/datepickerbutton"
+style="?android:spinnerStyle"
+android:layout_width="250dp"
+android:layout_height="wrap_content"
+android:layout_marginStart="32dp"
+android:layout_marginLeft="32dp"
+android:layout_marginTop="44dp"
+android:layout_marginEnd="32dp"
+android:layout_marginRight="32dp"
+android:onClick="openDatepicker"
+android:text="JAN 01 2020"
+android:textColor="@color/black"
+android:textSize="30sp"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.494"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/textView" />
+<TextView
+android:id="@+id/textView2"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="32dp"
+android:layout_marginLeft="32dp"
+
+android:layout_marginTop="32dp"
+android:layout_marginEnd="32dp"
+android:layout_marginRight="32dp"
+android:text="SELECT TIME"
+android:textColor="@color/teal_700"
+android:textSize="30sp"
+android:textStyle="bold"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+User Interface
+
+Output
+
+
